@@ -62,7 +62,7 @@ public class HistoricoTest {
 		Conta conta = Mockito.mock(Conta.class);
 		String menssage = null;
 		try {
-			Historico historico = new Historico(HistoricoTipo.ENTRADA, 100.0, conta, null);
+			Historico historico = new Historico(HistoricoTipo.ENTRADA, data, 100.0, conta, 100.0);
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}

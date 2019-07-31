@@ -20,6 +20,8 @@ public class Cliente {
 	public Cliente (String nome, String cpf) {
 		Assert.hasText(nome, "Nome é obrigatório.");
 		Assert.hasText(cpf, "CPF é obrigatório.");
+		this.nome = nome;
+		this.cpf = cpf;
 	}
 
 	public Long getId() {
