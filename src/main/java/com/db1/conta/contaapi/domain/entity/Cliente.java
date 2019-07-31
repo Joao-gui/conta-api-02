@@ -13,7 +13,7 @@ public class Cliente {
 	
 	private List<Endereco> endereco = new ArrayList<Endereco>();
 	
-	private List<Contas> contas = new ArrayList<>();
+	private List<Conta> conta = new ArrayList<Conta>();
 		
 	private String cpf;
 	
@@ -30,8 +30,8 @@ public class Cliente {
 		return nome;
 	}
 
-	public List<Contas> getContas() {
-		return contas;
+	public List<Conta> getConta() {
+		return conta;
 	}
 
 	public List<Endereco> getEndereco() {

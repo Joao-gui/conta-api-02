@@ -8,9 +8,8 @@ public class ClienteTest {
 	@Test
 	public void deveRetornarNomeObrigatorio() {
 		String menssage = null;
-		Cliente cliente = null;
 		try {
-			cliente = new Cliente(null, "123500");
+			Cliente cliente = new Cliente(null, "123500");
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
@@ -33,7 +32,7 @@ public class ClienteTest {
 		String menssage = null;
 		Cliente cliente = null;
 		try {
-			cliente = new Cliente("Joao", "010.456.825-87");
+			cliente = new Cliente("Joao","010.456.825-87");
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
