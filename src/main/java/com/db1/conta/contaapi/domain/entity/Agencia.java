@@ -1,16 +1,37 @@
 package com.db1.conta.contaapi.domain.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.util.Assert;
+
+@Entity
+@Table(name = "agencia")
+				
 
 public class Agencia {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Identity deixa para pegar a melhor maneira que o banco de dados fornece
 	private Long id;
 	
+	@Column(name = "numero", length = 5, nullable = false, unique = true)
 	private String numero;
 	
+	@Column(name = "digito", length = 1, nullable = false)
 	private String digito;
 	
+	@ManyToOne
+	@JoinColumn(name = "cidade_id",nullable = false)
 	private Cidade cidade;
+	
+	protected Agencia() {}
 	
 	public Agencia (String numero, String digito, Cidade cidade) {
 		Assert.hasText(numero, "Numero é obrigatório.");
