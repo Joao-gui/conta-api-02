@@ -29,8 +29,7 @@ public class AgenciaRepositoryTest {
 	@After
 	public void afterTest() {
 		agenciaRepository.deleteAll();
-		cidadeRepository.deleteAll();
-		
+		cidadeRepository.deleteAll();		
 	}
 	
 	@Test

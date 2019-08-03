@@ -12,7 +12,7 @@ public class ContaTest {
 		Cliente cliente = Mockito.mock(Cliente.class);
 		String menssage = null;
 		try {
-			Conta conta = new Conta(null, ContaTIpo.CORRENTE, "0125", cliente, 100.0);
+			Conta conta = new Conta(null, ContaTIpo.CORRENTE, "0125", cliente);
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
@@ -25,7 +25,7 @@ public class ContaTest {
 		Agencia agencia = Mockito.mock(Agencia.class);
 		String menssage = null;
 		try {
-			Conta conta = new Conta(agencia, null, "0125", cliente, 100.0);
+			Conta conta = new Conta(agencia, null, "0125", cliente);
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
@@ -38,7 +38,7 @@ public class ContaTest {
 		Agencia agencia = Mockito.mock(Agencia.class);
 		String menssage = null;
 		try {
-			Conta conta = new Conta(agencia, ContaTIpo.CORRENTE, null, cliente, 100.0);
+			Conta conta = new Conta(agencia, ContaTIpo.CORRENTE, null, cliente);
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
@@ -50,24 +50,11 @@ public class ContaTest {
 		Agencia agencia = Mockito.mock(Agencia.class);
 		String menssage = null;
 		try {
-			Conta conta = new Conta(agencia, ContaTIpo.CORRENTE, "0125", null, 100.0);
+			Conta conta = new Conta(agencia, ContaTIpo.CORRENTE, "0125", null);
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
 		Assert.assertEquals("Cliente é obrigatório.", menssage);
-	}
-	
-	@Test
-	public void deveRetornarSaldoObrigatorio() {
-		Cliente cliente = Mockito.mock(Cliente.class);
-		Agencia agencia = Mockito.mock(Agencia.class);
-		String menssage = null;
-		try {
-			Conta conta = new Conta(agencia, ContaTIpo.CORRENTE, "0125", cliente, null);
-		}catch (Exception e) {
-			menssage = e.getMessage();
-		}
-		Assert.assertEquals("Saldo é obrigatório.", menssage);
 	}
 	
 	@Test
@@ -77,7 +64,7 @@ public class ContaTest {
 		String menssage = null;
 		Conta conta = null;
 		try {
-			conta = new Conta(agencia, ContaTIpo.CORRENTE, "0125", cliente, 100.0);
+			conta = new Conta(agencia, ContaTIpo.CORRENTE, "0125", cliente);
 		}catch (Exception e) {
 			menssage = e.getMessage();
 		}
@@ -86,7 +73,7 @@ public class ContaTest {
 		Assert.assertEquals(ContaTIpo.CORRENTE, conta.getContaTipo());
 		Assert.assertEquals("0125", conta.getNumero());
 		Assert.assertEquals(cliente, conta.getCliente());
-		Assert.assertEquals(100.0, conta.getSaldo(), 0.0);
+		Assert.assertEquals(0.0, conta.getSaldo(), 0.0);
 	}
 
 }
