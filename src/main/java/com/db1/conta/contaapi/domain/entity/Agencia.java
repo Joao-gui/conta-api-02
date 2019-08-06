@@ -21,7 +21,7 @@ public class Agencia {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Identity deixa para pegar a melhor maneira que o banco de dados fornece
 	private Long id;
 	
-	@Column(name = "numero", length = 5, nullable = false, unique = true)
+	@Column(name = "numero", length = 10, nullable = false, unique = true)
 	private String numero;
 	
 	@Column(name = "digito", length = 1, nullable = false)

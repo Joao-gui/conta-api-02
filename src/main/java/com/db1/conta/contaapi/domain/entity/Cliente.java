@@ -35,7 +35,7 @@ public class Cliente {
 //	@JoinColumn(name = "conta_id", nullable = false)
 //	private List<Conta> conta = new ArrayList<Conta>();
 
-	@Column(name = "cpf", length = 15, nullable = false, unique = true)
+	@Column(name = "cpf", length = 20, nullable = false, unique = true)
 	private String cpf;
 	
 	protected Cliente() {}

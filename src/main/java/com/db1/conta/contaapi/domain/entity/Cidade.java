@@ -31,11 +31,28 @@ public class Cidade {
 	protected Cidade() {}
 	
 	public Cidade (String nome, Estado estado) {
-		Assert.hasText(nome, "Nome é obrigatório.");
-		Assert.notNull(estado, "Estado é obrigatório.");
+		this.ValidadeCidade(nome, estado);
 		this.nome = nome;
 		this.estado = estado;
 	}	
+	
+	public void alterar(String nome, Estado estado) {
+		this.ValidadeCidade(nome, estado);
+		this.nome = nome;
+		this.estado = estado;
+	}
+	
+	public void deletar(String nome, Estado estado) {
+		this.ValidadeCidade(nome, estado);
+		this.nome = nome;
+		this.estado = estado;
+	}
+	
+	private void ValidadeCidade(String nome, Estado estado) {
+		Assert.hasText(nome, "Nome é obrigatório.");
+		Assert.notNull(estado, "Estado é obrigatório.");
+		
+	}
 
 	public Long getId() {
 		return id;
