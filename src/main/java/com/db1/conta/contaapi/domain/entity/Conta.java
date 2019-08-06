@@ -33,7 +33,7 @@ public class Conta {
 	private Agencia agencia;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "contaTipo", length = 20, nullable = false)
+	@Column(name = "contaTipo", length = 40, nullable = false)
 	private ContaTIpo contaTipo;
 	
 	@Column(name = "numero", length = 20, nullable = false, unique = true)
